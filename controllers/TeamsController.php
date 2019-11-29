@@ -18,6 +18,9 @@ class TeamsController extends Controller
   {
     $teamsModel = new TeamsModel;
     $team = $teamsModel->getTeam($id);
+    $players = getPlayers($id);
+    $matchs = getMatchs($id);
+    $nextMatchs = getNextMatchs($id);
     require('views/team.php');
   }
 }
