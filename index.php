@@ -14,9 +14,12 @@ $path = isset($_GET['path']) ? $_GET['path'] : 'teams';
 switch ($path) {
   case 'teams':
     $teams = new TeamsController;
-    $teams-> listTeams();
+    if (isset($_GET['id'])) {
+      $teams->showTeam($_GET['id']);
+    }else {
+      $teams-> listTeams();
+    }
     break;
-  
   default:
     include('views/404.php');
     break;
