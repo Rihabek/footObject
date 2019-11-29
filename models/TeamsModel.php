@@ -3,7 +3,7 @@ require('../utils/Connection.php');
 /**
  *
  */
-class Teams extends Connection
+class TeamsModel extends Model
 {
 
   protected function allTeams()

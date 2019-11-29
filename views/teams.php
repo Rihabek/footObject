@@ -1,6 +1,5 @@
-<?php
-require('../controllers/ShowTeams.php');
-?>
+<?php $title = 'Liste des équipes' ?>
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
@@ -8,9 +7,8 @@ require('../controllers/ShowTeams.php');
     <title></title>
   </head>
   <body>
-    <?php
-      $teamList = new ShowTeams();
-      $teamList-> listTeams();
-    ?>
+
   </body>
 </html>
+<?php $content = ob_get_clean(); ?>
+<?php require('public/index.php'); ?>
