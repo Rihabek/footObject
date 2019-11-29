@@ -27,6 +27,12 @@ switch ($path) {
         $coachs->listCoachs();
       }
       break;
+    case 'player' :
+      $players = new PlayersController;
+      if (isset($_GET['id'])) {
+        $players->showPlayer($_GET['id']);
+      }
+      break;
     break;
   default:
     include('views/404.php');

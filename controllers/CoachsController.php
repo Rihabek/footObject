@@ -6,7 +6,7 @@
  */
 class CoachsController extends Controller
 {
-  public $teams;
+  public $coachs;
 
   public function listCoachs()
   {
