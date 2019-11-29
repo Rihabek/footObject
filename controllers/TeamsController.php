@@ -14,13 +14,13 @@ class TeamsController extends Controller
     $teams = $teamsModel->getTeams();
     require('views/teams.php');
   }
-  public function showTeam($id)
+  public function showTeam($id): void
   {
     $teamsModel = new TeamsModel;
     $team = $teamsModel->getTeam($id);
-    $players = getPlayers($id);
-    $matchs = getMatchs($id);
-    $nextMatchs = getNextMatchs($id);
+    $players = $teamsModel->getPlayers($id);
+    $matchs = $teamsModel->getMatchs($id);
+    $nextMatchs = $teamsModel->getNextMatchs($id);
     require('views/team.php');
   }
 }
