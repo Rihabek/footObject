@@ -1,6 +1,5 @@
 <?php
 
-require('../models/Teams.php');
 
 /**
  *

@@ -18,7 +18,7 @@ switch ($path) {
     break;
 
   default:
-    require('views/404.php')
+    include('views/404.php');
     break;
 }
  ?>

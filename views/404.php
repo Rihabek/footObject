@@ -6,4 +6,4 @@
   <p>Cette page n'existe pas.</p>
 </div>
 <?php $content = ob_get_clean(); ?>
-<?php require('public/index.php'); ?>
+<?php include('public/index.php'); ?>
