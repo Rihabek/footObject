@@ -7,33 +7,33 @@
     <meta name="description" content="Voici un site sur les équipe de ligue 1.">
     <title><?php echo $title ?></title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/css/style.css">
   </head>
-  <body class="bg-dark">
-    <header class="masthead col-12" id="stade">
-      <div class="overlay"></div>
+  <body class="">
+    <header class="masthead  mb-5">
       <div class="row">
-        <div class="col-lg-3 logo-ligue1">
-          <img src="https://www.lfp.fr/images/photos/articles/web/fiche/1819-logos-l1c-ligue-talents-autres.jpg?org=tinymce" alt="Logo ligue 1">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="./">Ligue 1</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="./">Listes des équipes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./?path=coachs">Listes des coachs</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Classement</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
-      </div>
-      <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="./">Ligue 1</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="./?path=coachs">Listes des coachs</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Classement</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
       </div>
     </header>
     <?php echo $content ?>

@@ -16,7 +16,7 @@ switch ($path) {
     $teams = new TeamsController;
     $teams-> listTeams();
     break;
-
+  
   default:
     include('views/404.php');
     break;

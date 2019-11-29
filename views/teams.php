@@ -23,16 +23,7 @@
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
-              <h5 class='title'><?php echo $team['name']; ?></h5>
-              <p class="text text-muted">
-                Abréviation : <?php echo $team['short_name'] ?>
-                <br>
-                Date de fondation :  <?php echo (new DateTime($team['fundation_date']))->format('d/m/Y') ?>
-                <br>
-                Président :  <?php echo $team['president'] ?>
-                <br>
-              </p>
-              <a href="./?id=<?php echo $team['id']; ?>" class="btn btn-primary">Fiche équipe</a>
+              <h5 class='title'> <a href="./?id=<?php echo $team['id']; ?>"><?php echo $team['name']; ?></a> </h5>
             </div>
           </div>
         </div>

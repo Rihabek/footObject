@@ -14,5 +14,4 @@ class TeamsModel extends Model
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 }
-
  ?>
