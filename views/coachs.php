@@ -35,7 +35,7 @@
             <td><?php echo $coach['nationality'] ?></td>
             <td><?php echo (new DateTime($coach['birthday_date']))->format('d/m/Y') ?></td>
             <td><?php echo $coach['birthday_place'] ?></td>
-            <td><a href="./?id=<?php echo $coach['tId']; ?>"><?php echo $coach['tName']; ?></a></td>
+            <td><a href="./?path=teams&id=<?php echo $coach['tId']; ?>"><?php echo $coach['tName']; ?></a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

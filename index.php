@@ -1,4 +1,7 @@
 <?php
+$route = explode('/', substr($_SERVER['REQUEST_URI'], 1));
+array_shift($route);
+var_dump($route);
 spl_autoload_register(function ($className)
 {
   $file = 'controllers/' . $className . '.php';
