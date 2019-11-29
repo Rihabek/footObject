@@ -15,14 +15,14 @@
       <div class="row">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="./">Ligue 1</a>
+            <a class="navbar-brand" href="./?path=teams">Ligue 1</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="./">Listes des équipes</a>
+                  <a class="nav-link" href="./?path=teams">Listes des équipes</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="./?path=coachs">Listes des coachs</a>

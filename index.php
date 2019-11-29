@@ -19,21 +19,21 @@ switch ($path) {
     }else {
       $teams-> listTeams();
     }
-    case 'coachs' :
-      $coachs = new CoachsController;
-      if (isset($_GET['id'])) {
-        $coachs->showCoach($_GET['id']);
-      } else {
-        $coachs->listCoachs();
-      }
-      break;
+    break;
+  case 'coachs' :
+    $coachs = new CoachsController;
+    if (isset($_GET['id'])) {
+      $coachs->showCoach($_GET['id']);
+    } else {
+      $coachs->listCoachs();
+    }
+    break;
     case 'player' :
       $players = new PlayersController;
       if (isset($_GET['id'])) {
         $players->showPlayer($_GET['id']);
       }
       break;
-    break;
   default:
     include('views/404.php');
     break;

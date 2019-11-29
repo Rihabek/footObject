@@ -24,7 +24,7 @@
   <div class="row mt-4">
     <div class="col-lg-12 col-md-10">
       <div class="photo-logo text-center">
-        <a href="./?id=<?php echo $coach['tId']; ?>"><img class='logo' src="<?php echo $coach['tLogo']; ?>" alt="Logo <?php echo $coach['tName']; ?>"></a>
+        <a href="./?path=teams&id=<?php echo $coach['tId']; ?>"><img class='logo' src="<?php echo $coach['tLogo']; ?>" alt="Logo <?php echo $coach['tName']; ?>"></a>
         <img class="photo" src="<?php echo $coach['photo']; ?>" alt="Photo <?php echo $coach['name']; ?>">
       </div>
     </div>
