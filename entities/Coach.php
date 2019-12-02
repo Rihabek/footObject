@@ -38,6 +38,21 @@ class Coach extends Entity
    */
   private $link;
 
+  /**
+   * @var int
+   */
+  private $tId;
+
+  /**
+   * @var string
+   */
+  private $tName;
+
+  /**
+   * @var string
+   */
+  private $tLogo;
+
     /**
      * Get the value of Id
      *
@@ -91,9 +106,9 @@ class Coach extends Entity
      *
      * @return \DateTime
      */
-    public function getBirthdayDate()
+    public function getBirthdayDate():\DateTime
     {
-        return $this->birthday_date;
+        return new \DateTime($this->birthday_date);
     }
 
     /**
@@ -202,6 +217,79 @@ class Coach extends Entity
     public function setLink($link)
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of Id
+     *
+     * @return int
+     */
+    public function getTId()
+    {
+        return $this->tId;
+    }
+
+    /**
+     * Set the value of Id
+     *
+     * @param int $tId
+     *
+     * @return self
+     */
+    public function setTId($tId)
+    {
+        $this->tId = $tId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Name
+     *
+     * @return string
+     */
+    public function getTName()
+    {
+        return $this->tName;
+    }
+
+    /**
+     * Set the value of Name
+     *
+     * @param string $tName
+     *
+     * @return self
+     */
+    public function setTName($tName)
+    {
+        $this->tName = $tName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Logo
+     *
+     * @return string
+     */
+    public function getTLogo()
+    {
+        return $this->tLogo;
+    }
+
+    /**
+     * Set the value of Logo
+     *
+     * @param string $tLogo
+     *
+     * @return self
+     */
+    public function setTLogo($tLogo)
+    {
+        $this->tLogo = $tLogo;
 
         return $this;
     }

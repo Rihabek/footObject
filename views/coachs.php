@@ -32,12 +32,12 @@
   </thead>
         <?php foreach ($coachs as $coach): ?>
           <tr>
-            <td><img src="<?php echo $coach['photo']; ?>" alt="Photo de <?php echo $coach['name']; ?>"></td>
-            <td><a href="./?path=coachs&id=<?php echo $coach['id']; ?>"><?php echo $coach['name'] ?></a></td>
-            <td><?php echo $coach['nationality'] ?></td>
-            <td><?php echo (new DateTime($coach['birthday_date']))->format('d/m/Y') ?></td>
-            <td><?php echo $coach['birthday_place'] ?></td>
-            <td><a href="./?path=teams&id=<?php echo $coach['tId']; ?>"><?php echo $coach['tName']; ?></a></td>
+            <td><img src="<?php echo $coach->getPhoto(); ?>" alt="Photo de <?php echo $coach->getName(); ?>"></td>
+            <td><a href="./coachs/<?php echo $coach->getId(); ?>"><?php echo $coach->getName(); ?></a></td>
+            <td><?php echo $coach->getNationality(); ?></td>
+            <td><?php echo $coach->getBirthdayDate()->format('d/m/Y'); ?></td>
+            <td><?php echo $coach->getBirthdayPlace(); ?></td>
+            <td><a href="./teams/<?php echo $coach->getTId(); ?>"><?php echo $coach->getTName(); ?></a></td>
           </tr>
         <?php endforeach; ?>
       </tbody>

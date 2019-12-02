@@ -11,13 +11,7 @@ class CoachsModel extends Model
   public function getCoachs()
   {
     $request = "SELECT
-    c.id,
-    c.name,
-    c.birthday_date,
-    c.birthday_place,
-    c.nationality,
-    c.photo,
-    c.link,
+    c.*,
     t.id AS tId,
     t.name AS tName,
     t.logo AS tLogo,
@@ -31,7 +25,7 @@ class CoachsModel extends Model
     INNER JOIN teams AS t
     ON cht.id_team= t.id";
 
-    $stmt = $this->db->prepare(self::$request);
+    $stmt = $this->db->prepare($request);
     $stmt->execute();
     return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Coach');
   }
@@ -45,13 +39,7 @@ class CoachsModel extends Model
   public function showCoach($id)
   {
     $request = "SELECT
-    c.id,
-    c.name,
-    c.birthday_date,
-    c.birthday_place,
-    c.nationality,
-    c.photo,
-    c.link,
+    c.*,
     t.id AS tId,
     t.name AS tName,
     t.logo AS tLogo,
@@ -65,11 +53,14 @@ class CoachsModel extends Model
     INNER JOIN teams AS t
     ON cht.id_team= t.id
     WHERE c.id = :id";
-    $stmt = $this->db->prepare(self::$request);
+    $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetchObject('Entities\Coach');
   }
+
+
+
 }
 
  ?>
