@@ -68,7 +68,7 @@
          <tbody>
            <?php foreach ($players as $player): ?>
              <tr>
-               <td><a href="?path=player&id=<?php echo $player->getId();?>"><?php echo $player->getName(); ?></a></td>
+               <td><a href="./player/<?php echo $player->getId();?>"><?php echo $player->getName(); ?></a></td>
                <td><?php echo $player->getNationality();?></td>
                <td><?php echo $player->getBirthdayDate()->format('d/m/Y'); ?></td>
                <td><?php echo $player->getPoste(); ?></td>

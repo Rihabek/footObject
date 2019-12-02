@@ -12,17 +12,7 @@ class PlayersModel extends Model
   public function getPlayers($id)
   {
     $request = "SELECT
-    p.id,
-    p.name,
-    p.short_name,
-    p.birthday_date,
-    p.birthday_place,
-    p.weight,
-    p.size,
-    p.nationality,
-    p.poste,
-    p.photo,
-    p.link,
+    p.*,
     pht.id_player,
     pht.id_team,
     pht.start_date AS startPlayer,
@@ -35,7 +25,7 @@ class PlayersModel extends Model
     INNER JOIN teams AS t
     ON pht.id_team = t.id
     WHERE p.id = :id";
-    $stmt = $this->db->prepare(self::$request);
+    $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetchObject('Entities\Player');

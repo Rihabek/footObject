@@ -6,7 +6,7 @@ class PlayersController extends Controller
 {
   private $PlayerModel;
 
-  public function __construct())
+  public function __construct()
   {
     $this->PlayersModel = new PlayersModel;
   }

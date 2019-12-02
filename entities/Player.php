@@ -58,6 +58,16 @@ class Player extends Entity
    */
   private $link;
 
+  /**
+   * @var int
+   */
+  private $tId;
+
+  /**
+   * @var string
+   */
+  private $tName;
+
     /**
      * Get the value of Id
      *
@@ -322,4 +332,53 @@ class Player extends Entity
         return $this;
     }
 
+
+    /**
+     * Get the value of Id
+     *
+     * @return int
+     */
+    public function getTId()
+    {
+        return $this->tId;
+    }
+
+    /**
+     * Set the value of Id
+     *
+     * @param int $tId
+     *
+     * @return self
+     */
+    public function setTId($tId)
+    {
+        $this->tId = $tId;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Name
+     *
+     * @return string
+     */
+    public function getTName()
+    {
+        return $this->tName;
+    }
+
+    /**
+     * Set the value of Name
+     *
+     * @param string $tName
+     *
+     * @return self
+     */
+    public function setTName($tName)
+    {
+        $this->tName = $tName;
+
+        return $this;
+    }
+ 
 }
