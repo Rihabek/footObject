@@ -19,24 +19,24 @@ $route = $params[0] ? $params[0] : 'teams';
 switch ($route) {
   case 'teams':
     $teams = new TeamsController;
-    if (isset($_GET['id'])) {
-      $teams->showTeam($_GET['id']);
-    }else {
-      $teams-> listTeams();
+    if (isset($params[1])) {
+    $teams->showTeam($params[1]);
+    } else {
+      $teams->listTeams();
     }
     break;
   case 'coachs' :
     $coachs = new CoachsController;
-    if (isset($_GET['id'])) {
-      $coachs->showCoach($_GET['id']);
+    if (isset($params[1])) {
+      $coachs->showCoach($params[1]);
     } else {
       $coachs->listCoachs();
     }
     break;
     case 'player' :
       $players = new PlayersController;
-      if (isset($_GET['id'])) {
-        $players->showPlayer($_GET['id']);
+      if (isset($params[1])) {
+        $players->showPlayer($params[1]);
       }
       break;
   default:

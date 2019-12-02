@@ -1,5 +1,5 @@
 <?php
-namespace Controller;
+namespace Controllers;
 
 use Models\PlayersModel;
 class PlayersController extends Controller

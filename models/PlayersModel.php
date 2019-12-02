@@ -33,7 +33,7 @@ class PlayersModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetch();
+    return $stmt->fetchObject();
   }
 }
 

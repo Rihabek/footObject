@@ -1,6 +1,6 @@
 <?php
 
-namespace Controller;
+namespace Controllers;
 use Models\TeamsModel;
 class TeamsController extends Controller
 {
@@ -12,14 +12,20 @@ class TeamsController extends Controller
     $teams = $teamsModel->getTeams();
     require('views/teams.php');
   }
-  public function showTeam($id): void
+  public function showTeam(int $id): void
   {
-    $teamsModel = new TeamsModel;
+    /*$teamsModel = new TeamsModel;
     $team = $teamsModel->getTeam($id);
     $players = $teamsModel->getPlayers($id);
     $matchs = $teamsModel->getMatchs($id);
-    $nextMatchs = $teamsModel->getNextMatchs($id);
-    require('views/team.php');
+    $nextMatchs = $teamsModel->getNextMatchs($id);*/
+
+    $this->render('views/team.php', [
+      'team' => $this->TeamsModel->getTeam($id),
+      'players' => $this->TeamsModel->getPlayers($id),
+      'matchs' => $this->TeamsModel->getMatchs($id),
+      'nextMatchs' => $this->TeamsModel->getNextMatchs($id),
+    ]);
   }
 }
 

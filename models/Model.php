@@ -5,11 +5,19 @@ namespace Models;
 
 abstract class Model
 {
+  private static $connection;
+
   protected $db;
 
   public function __construct()
   {
-    $this->db = new PDO('mysql:host=localhost;dbname=football_french_championship', 'root', '', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+    if (!self::$connection) {
+      self::$connection = new \PDO('mysql:dbname=football_french_championship;host=localhost', 'root', null, array(
+        \PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'
+      ));
+      self::$connection->setAttribute(\PDO::ATTR_CASE, \PDO::CASE_NATURAL );
+    }
+    $this->db = self::$connection;
   }
 }
 

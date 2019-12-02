@@ -29,7 +29,7 @@ class CoachsModel extends Model
     ON cht.id_team= t.id";
     $stmt = $this->db->prepare($request);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   public function getCoach($id)
@@ -58,7 +58,7 @@ class CoachsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchObject();
   }
 }
 

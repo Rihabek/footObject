@@ -10,7 +10,7 @@ class TeamsModel extends Model
     $request = "SELECT * FROM teams";
     $stmt = $this->db->prepare($request);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   public function getTeam($id)
@@ -40,7 +40,7 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    return $stmt->fetchObject();
   }
 
   public function getPlayers($id)
@@ -61,7 +61,7 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   public function getMatchs($id)
@@ -88,7 +88,7 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
   public function getNextMatchs($id)
@@ -115,7 +115,7 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 }
  ?>
