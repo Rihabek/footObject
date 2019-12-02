@@ -112,7 +112,7 @@ class TeamsModel extends Model
   public function getMatchs($id)
   {
     $request = "SELECT
-    m.id *,
+    m.*,
     th.id AS thId,
     ta.id AS taId,
     th.short_name AS thShortName,

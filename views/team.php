@@ -101,8 +101,8 @@
           <th scope="row" colspan="2">Résultats saison 2019-2020</th>
           <?php foreach ($matchs as $match): ?>
             <tr>
-             <td>Journée <?php echo $match['mDay']; ?></td>
-             <td><?php echo $match['thShortName'] ?> <?php echo $match['scoreHome']; ?> - <?php echo $match['scoreAway']; ?>  <?php echo $match['taShortName']; ?></td>
+             <td>Journée <?php echo $match->getDay(); ?></td>
+             <td><?php echo $match->getThShortName(); ?> <?php echo $match->getScoreHome(); ?> - <?php echo $match->getScoreAway(); ?>  <?php echo $match->getTaShortName(); ?></td>
            </tr>
           <?php endforeach; ?>
         </table>
@@ -110,9 +110,9 @@
           <th scope="row" colspan="3">Match à venir</th>
           <?php foreach ($nextMatchs as $nextMatch): ?>
             <tr>
-             <td>Journée <?php echo $nextMatch['mDay']; ?></td>
-             <td><?php echo $nextMatch['thShortName'] ?> <?php echo $nextMatch['scoreHome']; ?> - <?php echo $nextMatch['scoreAway']; ?>  <?php echo $nextMatch['taShortName']; ?> </td>
-             <td> <?php echo $nextMatch['mDate'] ?></td>
+             <td>Journée <?php echo $nextMatch->getDay(); ?></td>
+             <td><?php echo $nextMatch->getThShortName(); ?> <?php echo $nextMatch->getScoreHome(); ?> - <?php echo $nextMatch->getScoreAway(); ?>  <?php echo $nextMatch->getTaShortName(); ?> </td>
+             <td> <?php echo $nextMatch->getDate(); ?></td>
            </tr>
           <?php endforeach; ?>
         </table>

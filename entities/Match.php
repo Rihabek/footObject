@@ -43,6 +43,16 @@ class Match extends Entity
   */
   private $date;
 
+  /**
+  *@var string
+  */
+  private $thShortName;
+
+  /**
+  *@var string
+  */
+  private $taShortName;
+
 
     /**
      * Get the value of Id
@@ -232,6 +242,57 @@ class Match extends Entity
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
+
+        return $this;
+    }
+
+
+
+    /**
+     * Get the value of Th Short Name
+     *
+     * @return string
+     */
+    public function getThShortName()
+    {
+        return $this->thShortName;
+    }
+
+    /**
+     * Set the value of Th Short Name
+     *
+     * @param string $thShortName
+     *
+     * @return self
+     */
+    public function setThShortName($thShortName)
+    {
+        $this->thShortName = $thShortName;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of Ta Short Name
+     *
+     * @return string
+     */
+    public function getTaShortName()
+    {
+        return $this->taShortName;
+    }
+
+    /**
+     * Set the value of Ta Short Name
+     *
+     * @param string $taShortName
+     *
+     * @return self
+     */
+    public function setTaShortName($taShortName)
+    {
+        $this->taShortName = $taShortName;
 
         return $this;
     }
