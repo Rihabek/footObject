@@ -1,7 +1,7 @@
 
 <?php $extend = 'public/index.php'; ?>
-<?php $title = "Liste joueur"; ?>
-<?php $description = "Retrouvez la ficeh d'un joueur"; ?>
+<?php $title = "Fiche joueur : " . $players->getName();?>
+<?php $description = "Retrouvez la fiche d'un joueur"; ?>
 
 
 <style>

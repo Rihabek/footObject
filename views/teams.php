@@ -1,5 +1,5 @@
 <?php $extend = 'public/index.php'; ?>
-<?php $title = "Liste des équipe"; ?>
+<?php $title = "Liste des 20 équipes"; ?>
 <?php $description = "Retrouvez la liste des 20 équipes de Ligue 1."; ?>
 <style>
   .team .image {

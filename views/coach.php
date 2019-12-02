@@ -1,5 +1,5 @@
 <?php $extend = 'public/index.php'; ?>
-<?php $title = "Fiche entraîneur"; ?>
+<?php $title = "Fiche entraîneur : " . $coach->getName(); ?>
 <?php $description = "Retrouvez la fiche d'un entraîneur entraîneur."; ?>
 <style>
   .photo-logo{

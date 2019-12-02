@@ -1,5 +1,5 @@
 <?php $extend = 'public/index.php'; ?>
-<?php $title = "Fiche équipe"; ?>
+<?php $title = "Fiche équipe : " . $team->getShortName() ; ?>
 <?php $description = "Retrouvez la fiche d'une équipe."; ?>
 
 <style>
