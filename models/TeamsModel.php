@@ -5,6 +5,7 @@ use Entities\Team as EntityTeam;
 use Entities\Player as EntityPlayer;
 use Entities\Stadium as EntityStadium;
 use Entities\Coach as EntityCoach;
+use Entities\Match as EntityMatch;
 
 class TeamsModel extends Model
 {
@@ -82,18 +83,14 @@ class TeamsModel extends Model
 
   /**
    * @param int $id
-   * @return EntityTeam
+   * @return EntityPlayer
    */
 
   public function getPlayers($id)
   {
     $request = "SELECT
-    p.id AS pId,
-    p.name,
-    p.nationality,
-    p.birthday_date,
-    p.poste,
-    t.id
+    p.*,
+    t.id AS tId
     FROM players AS p
     INNER JOIN players_has_teams AS pht
     ON pht.id_player = p.id
@@ -103,20 +100,19 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Player');
   }
+
+
+  /**
+   * @param int $id
+   * @return EntityMatch
+   */
 
   public function getMatchs($id)
   {
     $request = "SELECT
-    m.id AS mId,
-    m.id_season AS idSeason,
-    m.id_team_home AS teamHome,
-    m.id_team_away AS teamAway,
-    m.score_home AS scoreHome,
-    m.score_away AS scoreAway,
-    m.day AS mDay,
-    m.date AS mDate,
+    m.id *,
     th.id AS thId,
     ta.id AS taId,
     th.short_name AS thShortName,
@@ -130,20 +126,17 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Match');
   }
 
+  /**
+   * @param int $id
+   * @return EntityMatch
+   */
   public function getNextMatchs($id)
   {
     $request = "SELECT
-    m.id AS mId,
-    m.id_season AS idSeason,
-    m.id_team_home AS teamHome,
-    m.id_team_away AS teamAway,
-    m.score_home AS scoreHome,
-    m.score_away AS scoreAway,
-    m.day AS mDay,
-    m.date AS mDate,
+    m.*,
     th.id AS thId,
     ta.id AS taId,
     th.short_name AS thShortName,
@@ -157,7 +150,7 @@ class TeamsModel extends Model
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Match');
   }
 }
  ?>

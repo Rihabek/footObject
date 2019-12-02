@@ -85,11 +85,11 @@
       <div class="content mt-3">
         Nom : <?php echo $stadium->getName(); ?>
         <br>
-        Adresse : <?php echo $team['sAdress']; ?>
+        Adresse : <?php echo $stadium->getAdress(); ?>
         <br>
-        Tel : <?php echo $team['sTel']; ?>
+        Tel : <?php echo $stadium->getTel(); ?>
         <br>
-        Capacité : <?php echo $team['sCapacity']; ?>
+        Capacité : <?php echo $stadium->getCapacity(); ?>
       </div>
     </div>
   </div>

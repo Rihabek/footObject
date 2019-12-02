@@ -135,9 +135,9 @@ class Player extends Entity
      *
      * @return \DateTime
      */
-    public function getBirthdayDate()
+    public function getBirthdayDate():\DateTime
     {
-        return $this->birthday_date;
+        return new \DateTime($this->birthday_date);
     }
 
     /**
