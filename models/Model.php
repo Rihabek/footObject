@@ -1,9 +1,9 @@
 <?php
 
-/**
- *
- */
-class Model
+namespace Models;
+//use Entities\Team as EntityTeam;
+
+abstract class Model
 {
   protected $db;
 

@@ -1,9 +1,7 @@
 <?php
+namespace Controller;
 
-
-/**
- *
- */
+use Models\CoachsModel;
 class CoachsController extends Controller
 {
   public $coachs;

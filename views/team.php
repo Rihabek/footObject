@@ -118,6 +118,7 @@
       </div>
     </div>
   </div>
+  <!-- Compositon équipe
   <div class="row mt-4">
     <div class="col-lg-12 col-md-10">
       <button type="button" class="collapsible">Composition</button>
@@ -137,7 +138,7 @@
         <img class="img-fluid w-100" src="./public/img/stade.png" alt="">
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 <script>
 var coll = document.getElementsByClassName("collapsible");

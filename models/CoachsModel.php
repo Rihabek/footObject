@@ -1,7 +1,7 @@
 <?php
-/**
- *
- */
+namespace Models;
+//use Entites\Coach as EntityCoach;
+
 class CoachsModel extends Model
 {
 

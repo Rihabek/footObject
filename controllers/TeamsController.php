@@ -1,9 +1,7 @@
 <?php
 
-
-/**
- *
- */
+namespace Controller;
+use Models\TeamsModel;
 class TeamsController extends Controller
 {
   public $teams;

@@ -1,9 +1,7 @@
 <?php
+namespace Controller;
 
-
-/**
- *
- */
+use Models\PlayersModel;
 class PlayersController extends Controller
 {
   public $players;

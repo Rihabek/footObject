@@ -1,17 +1,22 @@
 <?php
-spl_autoload_register(function ($className)
-{
-  $file = 'controllers/' . $className . '.php';
-  if (file_exists($file)) {
-    include $file;
-  }else {
-    include 'models/' . $className . '.php';
-  }
+use Controllers\TeamsController;
+use Controllers\CoachsController;
+use Controllers\PlayersController;
+
+
+spl_autoload_register(function ($class) {
+  $parts = explode('\\', $class);
+  $className = array_pop($parts);
+  $path = implode(DIRECTORY_SEPARATOR, $parts);
+  $file = $className.'.php';
+  require strtolower($path) . DIRECTORY_SEPARATOR . $file;
 });
+$params = explode('/', substr($_SERVER['REQUEST_URI'], 1));
+array_shift($params);
 
-$path = isset($_GET['path']) ? $_GET['path'] : 'teams';
+$route = $params[0] ? $params[0] : 'teams';
 
-switch ($path) {
+switch ($route) {
   case 'teams':
     $teams = new TeamsController;
     if (isset($_GET['id'])) {

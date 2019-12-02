@@ -15,7 +15,8 @@
       <div class="row">
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="./?path=teams">Ligue 1</a>
+
+            <img src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-08-22/6XPgDHX.png?w=660" alt="">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

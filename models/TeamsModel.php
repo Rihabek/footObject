@@ -1,8 +1,7 @@
 <?php
 
-/**
- *
- */
+namespace Models;
+//use Entities\Team as EntityTeam;
 class TeamsModel extends Model
 {
 
