@@ -30,25 +30,25 @@
 <div class="container jumbotron">
   <div class="row">
     <div class="col-lg-12 col-md-10 text-center">
-      <h3><?php echo $team['short_name']; ?></h3>
-      <img src="<?php echo $team['logo']; ?>" alt="">
+      <h3><?php echo $team->getShortName(); ?></h3>
+      <img src="<?php echo $team->getLogo(); ?>" alt="">
     </div>
   </div>
   <div class="row mt-4">
     <div class="col-lg-12 col-md-10">
       <button type="button" class="collapsible">Informations</button>
       <div class="content mt-3">
-        Nom : <?php echo $team['name']; ?>
+        Nom : <?php echo $team->getName(); ?>
         <br>
-        Fondé en : <?php echo $team['fundation_date']; ?>
+        Fondé en : <?php echo $team->getFundationDate()->format('Y'); ?>
         <br>
-        Entraîneur : <a href="./?path=coachs&id=<?php echo $teams['cId']; ?>"><?php echo $team['cName']; ?></a>
+        Entraîneur : <a href="./?path=coachs/<?php echo $coach->getId(); ?>"><?php echo $coach->getName(); ?></a>
         <br>
-        Président : <?php echo $team['president']; ?>
+        Président : <?php echo $team->getPresident(); ?>
         <br>
-        Site web : <?php echo $team['website']; ?>
+        Site web : <?php echo $team->getWebsite(); ?>
         <br>
-        Adresse : <?php echo $team['adress']; ?>
+        Adresse : <?php echo $team->getAdress(); ?>
       </div>
     </div>
   </div>
@@ -68,10 +68,10 @@
          <tbody>
            <?php foreach ($players as $player): ?>
              <tr>
-               <td><a href="?path=player&id=<?php echo $player['pId'];?>"><?php echo $player['name'] ?></a></td>
-               <td><?php echo $player['nationality'] ?></td>
-               <td><?php echo (new DateTime($player['birthday_date']))->format('d/m/Y') ?></td>
-               <td><?php echo $player['poste'] ?></td>
+               <td><a href="?path=player&id=<?php echo $player->getId();?>"><?php echo $player->getName(); ?></a></td>
+               <td><?php echo $player->getNationality();?></td>
+               <td><?php echo $player->getBirthdayDate()->format('d/m/Y'); ?></td>
+               <td><?php echo $player->getPoste(); ?></td>
              </tr>
            <?php endforeach; ?>
          </tbody>
@@ -83,7 +83,7 @@
     <div class="col-lg-12 col-md-10">
       <button type="button" class="collapsible">Stade</button>
       <div class="content mt-3">
-        Nom : <?php echo $team['sName']; ?>
+        Nom : <?php echo $stadium->getName(); ?>
         <br>
         Adresse : <?php echo $team['sAdress']; ?>
         <br>

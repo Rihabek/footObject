@@ -23,6 +23,8 @@ class TeamsController extends Controller
       'players' => $this->TeamsModel->getPlayers($id),
       'matchs' => $this->TeamsModel->getMatchs($id),
       'nextMatchs' => $this->TeamsModel->getNextMatchs($id),
+      'stadium' => $this->TeamsModel->getStadiumByTeam($id),
+      'coach' => $this->TeamsModel->getCoachByTeam($id)
     ]);
   }
 }

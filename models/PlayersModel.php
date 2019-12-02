@@ -1,9 +1,14 @@
 <?php
 namespace Models;
-//use Entities\Player as EntityPlayer;
+use Entities\Player as EntityPlayer;
+
 class PlayersModel extends Model
 {
 
+  /**
+   * @param int $id
+   * @return EntityPlayer
+   */
   public function getPlayers($id)
   {
     $request = "SELECT
@@ -30,10 +35,10 @@ class PlayersModel extends Model
     INNER JOIN teams AS t
     ON pht.id_team = t.id
     WHERE p.id = :id";
-    $stmt = $this->db->prepare($request);
+    $stmt = $this->db->prepare(self::$request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchObject();
+    return $stmt->fetchObject('Entities\Player');
   }
 }
 

@@ -1,47 +1,89 @@
 <?php
 
 namespace Models;
-//use Entities\Team as EntityTeam;
+use Entities\Team as EntityTeam;
+use Entities\Player as EntityPlayer;
+use Entities\Stadium as EntityStadium;
+use Entities\Coach as EntityCoach;
+
 class TeamsModel extends Model
 {
-
-  public function getTeams()
+  /**
+  *@return array[EntityTeam]
+  */
+  public function getTeams(): array
   {
     $request = "SELECT * FROM teams";
     $stmt = $this->db->prepare($request);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Team');
   }
+
+  /**
+   * @param int $id
+   * @return EntityTeam
+   */
 
   public function getTeam($id)
   {
     $request = "SELECT
-    t.*,
-    c.id AS cId,
-    c.name AS cName,
-    cht.id_coach,
-    cht.id_team,
-    cht.start_date AS startCoach,
-    cht.end_date endCoach,
-    s.id AS sId,
-    s.name AS sName,
-    s.adress AS sAdress,
-    s.tel AS sTel,
-    s.capacity AS sCapacity
+    t.*
     FROM teams AS t
-    INNER JOIN stadiums AS s
-    ON t.id_stadium = s.id
-    INNER JOIN coachs_has_teams AS cht
-    ON cht.id_team = t.id
-    INNER JOIN coachs AS c
-    ON cht.id_coach= c.id
     WHERE t.id = :id";
 
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchObject();
+    return $stmt->fetchObject('Entities\Team');
   }
+
+  /**
+   * @param int $id
+   * @return EntityStadium
+   */
+  public function getStadiumByTeam($id)
+  {
+    $request = "SELECT
+    s.*,
+    t.id AS tId
+    FROM stadiums AS s
+    INNER JOIN teams AS t
+    ON t.id_stadium = s.id
+    WHERE t.id = :id";
+
+    $stmt = $this->db->prepare($request);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchObject('Entities\Stadium');
+  }
+
+
+  /**
+   * @param int $id
+   * @return EntityCoach
+   */
+  public function getCoachByTeam($id)
+  {
+    $request = "SELECT
+    c.*,
+    t.id as tId
+    FROM coachs AS c
+    INNER JOIN coachs_has_teams AS cht
+    ON cht.id_coach = c.id
+    INNER JOIN teams AS t
+    ON t.id = cht.id_team
+    WHERE t.id = :id";
+
+    $stmt = $this->db->prepare($request);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchObject('Entities\Coach');
+  }
+
+  /**
+   * @param int $id
+   * @return EntityTeam
+   */
 
   public function getPlayers($id)
   {

@@ -16,10 +16,9 @@
   <table class="table table-hover">
     <?php foreach ($teams as $team): ?>
       <tr>
-        <td scope="col"><img src="<?php echo $team['logo']; ?>" alt="Logo de <?php echo $team['short_name']; ?>"></td>
-        <td scope="col"><h5 class='title'> <a href="./teams/<?php echo $team['id']; ?>"><?php echo $team['name']; ?></a> </h5></td>
+        <td scope="col"><img src="<?php echo $team->getLogo(); ?>" alt="Logo de <?php echo $team->getShortName(); ?>"></td>
+        <td scope="col"><h5 class='title'> <a href="./teams/<?php echo $team->getId(); ?>"><?php echo $team->getName(); ?></a> </h5></td>
       </tr>
     <?php endforeach; ?>
   </table>
   </div>
-</div>

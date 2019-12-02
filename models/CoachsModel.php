@@ -1,9 +1,12 @@
 <?php
 namespace Models;
-//use Entites\Coach as EntityCoach;
+use Entites\Coach as EntityCoach;
 
 class CoachsModel extends Model
 {
+  /**
+   * @return array[EntityCoach]
+   */
 
   public function getCoachs()
   {
@@ -27,10 +30,17 @@ class CoachsModel extends Model
     ON cht.id_coach = c.id
     INNER JOIN teams AS t
     ON cht.id_team= t.id";
-    $stmt = $this->db->prepare($request);
+
+    $stmt = $this->db->prepare(self::$request);
     $stmt->execute();
-    return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Coach');
   }
+
+
+  /**
+   * @param int $id
+   * @return EntityCoach
+   */
 
   public function showCoach($id)
   {
@@ -55,10 +65,10 @@ class CoachsModel extends Model
     INNER JOIN teams AS t
     ON cht.id_team= t.id
     WHERE c.id = :id";
-    $stmt = $this->db->prepare($request);
+    $stmt = $this->db->prepare(self::$request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
-    return $stmt->fetchObject();
+    return $stmt->fetchObject('Entities\Coach');
   }
 }
 
