@@ -19,7 +19,7 @@ class CoachsController extends Controller
   public function showCoach($id): void
   {
     $this->render('views/coach.php', [
-      'coach' => $this->CoachsModel->getCoach($id)
+      'coach' => $this->CoachsModel->showCoach($id)
     ]);
   }
 }

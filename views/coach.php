@@ -19,26 +19,26 @@
 <div class="container jumbotron">
   <div class="row">
     <div class="col-lg-12 col-md-10 text-center">
-      <h3><?php echo $coach['name']; ?></h3>
+      <h3><?php echo $coach->getName(); ?></h3>
     </div>
   </div>
   <div class="row mt-4">
     <div class="col-lg-12 col-md-10">
       <div class="photo-logo text-center">
-        <a href="./?path=teams&id=<?php echo $coach['tId']; ?>"><img class='logo' src="<?php echo $coach['tLogo']; ?>" alt="Logo <?php echo $coach['tName']; ?>"></a>
-        <img class="photo" src="<?php echo $coach['photo']; ?>" alt="Photo <?php echo $coach['name']; ?>">
+        <a href="./teams/<?php echo $coach->getTId(); ?>"><img class='logo' src="<?php echo $coach->getTLogo(); ?>" alt="Logo <?php echo $coach->getTName(); ?>"></a>
+        <img class="photo" src="<?php echo $coach->getPhoto(); ?>" alt="Photo <?php echo $coach->getName(); ?>">
       </div>
     </div>
   </div>
   <div class="row mt-4">
     <div class="col-lg-12 col-md-10 text-center">
-      Nationalité : <?php echo $coach['nationality']; ?>
+      Nationalité : <?php echo $coach->getNationality(); ?>
       <br>
-      Date de naissance : <?php echo (new DateTime($coach['birthday_date']))->format('d/m/Y'); ?>
+      Date de naissance : <?php echo $coach->getBirthdayDate()->format('d/m/Y'); ?>
       <br>
-      Lieu de naissance : <?php echo $coach['birthday_place']; ?>
+      Lieu de naissance : <?php echo $coach->getBirthdayPlace(); ?>
       <br>
-      Informations supplémentaires : <a href="<?php echo $coach['link']; ?>"><?php echo $coach['link']; ?></a>
+      Informations supplémentaires : <a href="<?php echo $coach->getLink(); ?>"><?php echo $coach->getLink(); ?></a>
     </div>
   </div>
 </div>
