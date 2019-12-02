@@ -1,5 +1,7 @@
-<?php $title = "Liste des entraîneurs" ?>
-<?php ob_start(); ?>
+<?php $extend = 'public/index.php'; ?>
+<?php $title = "Liste des entraîneurs"; ?>
+<?php $description = "Retrouvez la liste des 20 des entraîneurs de Ligue 1."; ?>
+
 <style>
   .coachs .image {
     display: flex;
@@ -42,5 +44,3 @@
     </table>
   </div>
 </div>
-<?php $content = ob_get_clean(); ?>
-<?php require('public/index.php'); ?>

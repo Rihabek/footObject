@@ -1,5 +1,6 @@
-<?php $title = "Fiche équipe" ?>
-<?php ob_start(); ?>
+<?php $extend = 'public/index.php'; ?>
+<?php $title = "Fiche équipe"; ?>
+<?php $description = "Retrouvez la fiche d'une équipe."; ?>
 
 <style>
   .collapsible {
@@ -156,5 +157,3 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 </script>
-<?php $content = ob_get_clean(); ?>
-<?php require('public/index.php'); ?>

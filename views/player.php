@@ -1,5 +1,8 @@
-<?php $title="Fiche joueur" ?>
-<?php ob_start(); ?>
+
+<?php $extend = 'public/index.php'; ?>
+<?php $title = "Liste joueur"; ?>
+<?php $description = "Retrouvez la ficeh d'un joueur"; ?>
+
 
 <style>
 
@@ -36,6 +39,3 @@
       </div>
     </div>
   </div>
-
-<?php $content = ob_get_clean(); ?>
-<?php require('public/index.php'); ?>

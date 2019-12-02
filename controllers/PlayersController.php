@@ -4,13 +4,18 @@ namespace Controllers;
 use Models\PlayersModel;
 class PlayersController extends Controller
 {
-  public $players;
+  private $PlayerModel;
+
+  public function __construct())
+  {
+    $this->PlayersModel = new PlayersModel;
+  }
 
   public function showPlayer($id): void
   {
-    $playersModel = new PlayersModel;
-    $players = $playersModel->getPlayers($id);
-    require('views/player.php');
+    $this->render('views/player.php', [
+      'players' => $this->PlayersModel->getPlayers($id)
+    ]);
   }
 }
 

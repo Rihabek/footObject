@@ -4,19 +4,23 @@ namespace Controllers;
 use Models\CoachsModel;
 class CoachsController extends Controller
 {
-  public $coachs;
+  private $CoachsModel;
 
+  public function __construct()
+  {
+    $this->CoachsModel = new CoachsModel;
+  }
   public function listCoachs()
   {
-    $coachsModel = new CoachsModel;
-    $coachs = $coachsModel->getCoachs();
-    require('views/coachs.php');
+    $this->render('views/coachs.php', [
+      'coachs' => $this->CoachsModel->getCoachs()
+    ]);
   }
   public function showCoach($id): void
   {
-    $coachsModel = new CoachsModel;
-    $coach = $coachsModel->getCoach($id);
-    require('views/coach.php');
+    $this->render('views/coach.php', [
+      'coach' => $this->CoachsModel->getCoach($id)
+    ]);
   }
 }
 

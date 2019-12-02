@@ -4,13 +4,17 @@ namespace Controllers;
 use Models\TeamsModel;
 class TeamsController extends Controller
 {
-  public $teams;
+  public $TeamsModel;
+  public function  __construct()
+  {
+    $this->TeamsModel = new TeamsModel;
+  }
 
   public function listTeams()
   {
-    $teamsModel = new TeamsModel;
-    $teams = $teamsModel->getTeams();
-    require('views/teams.php');
+    $this->render('views/teams.php', [
+      'teams' => $this->TeamsModel->getTeams()
+    ]);
   }
   public function showTeam(int $id): void
   {

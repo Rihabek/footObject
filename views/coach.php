@@ -1,5 +1,6 @@
-<?php $title="Fiche entraîneur" ?>
-<?php ob_start(); ?>
+<?php $extend = 'public/index.php'; ?>
+<?php $title = "Fiche entraîneur"; ?>
+<?php $description = "Retrouvez la fiche d'un entraîneur entraîneur."; ?>
 <style>
   .photo-logo{
     display: flex;
@@ -41,7 +42,3 @@
     </div>
   </div>
 </div>
-
-
-<?php $content = ob_get_clean(); ?>
-<?php require('public/index.php'); ?>

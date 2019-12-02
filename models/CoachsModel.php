@@ -32,7 +32,7 @@ class CoachsModel extends Model
     return $stmt->fetchAll(\PDO::FETCH_ASSOC);
   }
 
-  public function getCoach($id)
+  public function showCoach($id)
   {
     $request = "SELECT
     c.id,
