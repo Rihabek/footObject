@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
   <head>
+    <title><?php echo isset($title) ? $title : "Championnat de France de Football"; ?></title>
+    <meta name="description" content="<?php echo isset($description) ? $description : "Découvrez toutes les dernières informations, résultats et classements de la première division du championnat de France de football."; ?>" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta name="Author" content="Tony Blard">
-    <meta name="description" content="Voici un site sur les équipe de ligue 1.">
-    <title><?php echo $title ?></title>
+    <base href="/footObject/">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./public/css/style.css">
@@ -23,10 +24,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link" href="./?path=teams">Listes des équipes</a>
+                  <a class="nav-link" href="./teams">Listes des équipes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./?path=coachs">Listes des coachs</a>
+                  <a class="nav-link" href="./coachs">Listes des coachs</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Classement</a>

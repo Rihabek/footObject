@@ -42,7 +42,7 @@
         <br>
         Fondé en : <?php echo $team['fundation_date']; ?>
         <br>
-        Entraîneur : <a href="./?path=coachs&id=<?php echo $team['cId']; ?>"><?php echo $team['cName']; ?></a>
+        Entraîneur : <a href="./?path=coachs&id=<?php echo $teams['cId']; ?>"><?php echo $team['cName']; ?></a>
         <br>
         Président : <?php echo $team['president']; ?>
         <br>

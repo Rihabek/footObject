@@ -17,7 +17,7 @@
     <?php foreach ($teams as $team): ?>
       <tr>
         <td scope="col"><img src="<?php echo $team['logo']; ?>" alt="Logo de <?php echo $team['short_name']; ?>"></td>
-        <td scope="col"><h5 class='title'> <a href="./?path=teams&id=<?php echo $team['id']; ?>"><?php echo $team['name']; ?></a> </h5></td>
+        <td scope="col"><h5 class='title'> <a href="./teams/<?php echo $team['id']; ?>"><?php echo $team['name']; ?></a> </h5></td>
       </tr>
     <?php endforeach; ?>
   </table>
