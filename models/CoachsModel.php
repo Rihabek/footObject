@@ -36,7 +36,7 @@ class CoachsModel extends Model
    * @return EntityCoach
    */
 
-  public function showCoach($id)
+  public function showCoach(int $id)
   {
     $request = "SELECT
     c.*,
@@ -58,6 +58,29 @@ class CoachsModel extends Model
     $stmt->execute();
     return $stmt->fetchObject('Entities\Coach');
   }
+
+  /**
+   * @param int $id
+   * @return EntityCoach
+   */
+  public function getCoachByTeam(int $id)
+  {
+    $request = "SELECT
+    c.*,
+    t.id as tId
+    FROM coachs AS c
+    INNER JOIN coachs_has_teams AS cht
+    ON cht.id_coach = c.id
+    INNER JOIN teams AS t
+    ON t.id = cht.id_team
+    WHERE t.id = :id";
+
+    $stmt = $this->db->prepare($request);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchObject('Entities\Coach');
+  }
+
 
 
 
