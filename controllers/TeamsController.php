@@ -3,6 +3,7 @@
 namespace Controllers;
 use Models\TeamsModel;
 use Models\CoachsModel;
+use Models\StadiumsModel;
 
 class TeamsController extends Controller
 {
@@ -25,7 +26,7 @@ class TeamsController extends Controller
       'players' => $this->TeamsModel->getPlayers($id),
       'matchs' => $this->TeamsModel->getMatchs($id),
       'nextMatchs' => $this->TeamsModel->getNextMatchs($id),
-      'stadium' => $this->TeamsModel->getStadiumByTeam($id),
+      'stadium' => (new StadiumsModel)->getStadiumByTeam($id),
       'coach' => (new CoachsModel)->getCoachByTeam($id)
     ]);
   }

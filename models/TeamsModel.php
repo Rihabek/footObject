@@ -3,8 +3,6 @@
 namespace Models;
 use Entities\Team as EntityTeam;
 use Entities\Player as EntityPlayer;
-use Entities\Stadium as EntityStadium;
-use Entities\Coach as EntityCoach;
 use Entities\Match as EntityMatch;
 
 class TeamsModel extends Model
@@ -38,28 +36,9 @@ class TeamsModel extends Model
     return $stmt->fetchObject('Entities\Team');
   }
 
-  /**
-   * @param int $id
-   * @return EntityStadium
-   */
-  public function getStadiumByTeam(int $id)
-  {
-    $request = "SELECT
-    s.*,
-    t.id AS tId
-    FROM stadiums AS s
-    INNER JOIN teams AS t
-    ON t.id_stadium = s.id
-    WHERE t.id = :id";
-
-    $stmt = $this->db->prepare($request);
-    $stmt->bindValue(':id', $id);
-    $stmt->execute();
-    return $stmt->fetchObject('Entities\Stadium');
-  }
 
 
-  
+
   /**
    * @param int $id
    * @return EntityPlayer
