@@ -63,6 +63,7 @@
               <th>Nationalité</th>
               <th>Date de naissance</th>
               <th>Poste</th>
+              <th>Numéro</th>
             </tr>
           </thead>
          <tbody>
@@ -72,6 +73,7 @@
                <td><?php echo $player->getNationality();?></td>
                <td><?php echo $player->getBirthdayDate()->format('d/m/Y'); ?></td>
                <td><?php echo $player->getPoste(); ?></td>
+               <td><?php echo var_dump($player->getNumberPlayer()); ?></td>
              </tr>
            <?php endforeach; ?>
          </tbody>

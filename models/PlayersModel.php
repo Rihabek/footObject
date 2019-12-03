@@ -16,7 +16,8 @@ class PlayersModel extends Model
     pht.id_player,
     pht.id_team,
     pht.start_date AS startPlayer,
-    pht.end_date endPlayer,
+    pht.end_date AS endPlayer,
+    pht.number AS numberPlayer,
     t.id AS tId,
     t.name AS tName
     FROM players AS p

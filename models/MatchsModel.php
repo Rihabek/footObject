@@ -24,7 +24,7 @@ class MatchsModel extends Model
     ON th.id = m.id_team_home
     INNER JOIN teams AS ta
     ON ta.id = m.id_team_away
-    WHERE (th.id = :id OR ta.id = :id) AND m.date IS NULL";
+    WHERE (th.id = :id OR ta.id = :id) AND m.score_home IS NOT NULL";
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();
@@ -48,7 +48,7 @@ class MatchsModel extends Model
     ON th.id = m.id_team_home
     INNER JOIN teams AS ta
     ON ta.id = m.id_team_away
-    WHERE (th.id = :id OR ta.id = :id) AND m.date IS NOT NULL";
+    WHERE (th.id = :id OR ta.id = :id) AND m.score_home IS  NULL";
     $stmt = $this->db->prepare($request);
     $stmt->bindValue(':id', $id);
     $stmt->execute();

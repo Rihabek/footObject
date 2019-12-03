@@ -21,7 +21,7 @@ class TeamsModel extends Model
    * @return EntityTeam
    */
 
-  public function getTeam(int $id)
+  public function getTeam(int $id):EntityTeam
   {
     $request = "SELECT
     t.*

@@ -68,6 +68,11 @@ class Player extends Entity
    */
   private $tName;
 
+  /**
+   * @var int
+   */
+  private $numberPlayer;
+
     /**
      * Get the value of Id
      *
@@ -380,5 +385,32 @@ class Player extends Entity
 
         return $this;
     }
- 
+
+
+    /**
+     * Get the value of Number Player
+     *
+     * @return int
+     */
+    public function getNumberPlayer()
+    {
+        return $this->numberPlayer;
+    }
+
+    /**
+     * Set the value of Number Player
+     *
+     * @param int $numberPlayer
+     *
+     * @return self
+     */
+    public function setNumberPlayer($numberPlayer)
+    {
+        $this->numberPlayer = $numberPlayer;
+
+        return $this;
+    }
+
+
+
 }
