@@ -30,6 +30,28 @@ class PlayersModel extends Model
     $stmt->execute();
     return $stmt->fetchObject('Entities\Player');
   }
+
+  /**
+   * @param int $id
+   * @return EntityPlayer
+   */
+
+  public function getPlayersByTeam(int $id)
+  {
+    $request = "SELECT
+    p.*,
+    t.id AS tId
+    FROM players AS p
+    INNER JOIN players_has_teams AS pht
+    ON pht.id_player = p.id
+    INNER JOIN teams AS t
+    ON pht.id_team = t.id
+    WHERE t.id = :id";
+    $stmt = $this->db->prepare($request);
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Player');
+  }
 }
 
  ?>

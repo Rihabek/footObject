@@ -4,6 +4,7 @@ namespace Controllers;
 use Models\TeamsModel;
 use Models\CoachsModel;
 use Models\StadiumsModel;
+use Models\PlayersModel;
 
 class TeamsController extends Controller
 {
@@ -23,7 +24,7 @@ class TeamsController extends Controller
   {
     $this->render('views/team.php', [
       'team' => $this->TeamsModel->getTeam($id),
-      'players' => $this->TeamsModel->getPlayers($id),
+      'players' => (new PlayersModel)->getPlayersByTeam($id),
       'matchs' => $this->TeamsModel->getMatchs($id),
       'nextMatchs' => $this->TeamsModel->getNextMatchs($id),
       'stadium' => (new StadiumsModel)->getStadiumByTeam($id),
