@@ -25,7 +25,7 @@ class TeamsModel extends Model
    * @return EntityTeam
    */
 
-  public function getTeam($id)
+  public function getTeam(int $id)
   {
     $request = "SELECT
     t.*
@@ -42,7 +42,7 @@ class TeamsModel extends Model
    * @param int $id
    * @return EntityStadium
    */
-  public function getStadiumByTeam($id)
+  public function getStadiumByTeam(int $id)
   {
     $request = "SELECT
     s.*,
@@ -63,7 +63,7 @@ class TeamsModel extends Model
    * @param int $id
    * @return EntityCoach
    */
-  public function getCoachByTeam($id)
+  public function getCoachByTeam(int $id)
   {
     $request = "SELECT
     c.*,
@@ -86,7 +86,7 @@ class TeamsModel extends Model
    * @return EntityPlayer
    */
 
-  public function getPlayers($id)
+  public function getPlayers(int $id)
   {
     $request = "SELECT
     p.*,
@@ -109,7 +109,7 @@ class TeamsModel extends Model
    * @return EntityMatch
    */
 
-  public function getMatchs($id)
+  public function getMatchs(int $id)
   {
     $request = "SELECT
     m.*,
@@ -133,7 +133,7 @@ class TeamsModel extends Model
    * @param int $id
    * @return EntityMatch
    */
-  public function getNextMatchs($id)
+  public function getNextMatchs(int $id)
   {
     $request = "SELECT
     m.*,
