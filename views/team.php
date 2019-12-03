@@ -58,7 +58,7 @@
       <div class="content mt-3">
         <table class="table">
           <thead>
-            <tr>
+            <tr class="text-center">
               <th>Nom</th>
               <th>Nationalité</th>
               <th>Date de naissance</th>
@@ -68,12 +68,12 @@
           </thead>
          <tbody>
            <?php foreach ($players as $player): ?>
-             <tr>
+             <tr class="text-center">
                <td><a href="./player/<?php echo $player->getId();?>"><?php echo $player->getName(); ?></a></td>
                <td><?php echo $player->getNationality();?></td>
                <td><?php echo $player->getBirthdayDate()->format('d/m/Y'); ?></td>
                <td><?php echo $player->getPoste(); ?></td>
-               <td><?php echo var_dump($player->getNumberPlayer()); ?></td>
+               <td><?php echo $player->getNumberPlayer(); ?></td>
              </tr>
            <?php endforeach; ?>
          </tbody>

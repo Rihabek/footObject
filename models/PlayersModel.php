@@ -41,6 +41,7 @@ class PlayersModel extends Model
   {
     $request = "SELECT
     p.*,
+    pht.number AS numberPlayer,
     t.id AS tId
     FROM players AS p
     INNER JOIN players_has_teams AS pht

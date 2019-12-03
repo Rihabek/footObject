@@ -23,7 +23,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-10 mt-5">
-        Club : <a href="./?id=<?php echo $players->getTId(); ?>"><?php echo $players->getTName(); ?></a>
+        Club : <a href="./teams/<?php echo $players->getTId(); ?>"><?php echo $players->getTName(); ?></a>
         <br>
         Nationalité : <?php echo $players->getNationality(); ?>
         <br>
@@ -34,6 +34,8 @@
         Taille : <?php echo $players->getSize(); ?>
         <br>
         Poids : <?php echo $players->getWeight(); ?> kg
+        <br>
+        Numéro de maillot : <?php echo $players->getNumberPlayer(); ?>
         <br>
         Informations supplémentaires : <a href="<?php echo $players->getLink(); ?>"><?php echo $players->getLink(); ?></a>
       </div>
