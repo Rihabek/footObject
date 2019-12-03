@@ -42,7 +42,7 @@
         <br>
         Fondé en : <?php echo $team->getFundationDate()->format('Y'); ?>
         <br>
-        Entraîneur : <a href="./?path=coachs/<?php echo $coach->getId(); ?>"><?php echo $coach->getName(); ?></a>
+        Entraîneur : <a href="./coachs/<?php echo $coach->getId(); ?>"><?php echo $coach->getName(); ?></a>
         <br>
         Président : <?php echo $team->getPresident(); ?>
         <br>
