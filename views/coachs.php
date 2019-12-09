@@ -18,7 +18,7 @@
 </style>
 <div class="container">
   <div class="row">
-    <table class="table table-striped table-secondary">
+    <table class="table table-hover">
       <tbody>
         <thead>
     <tr>

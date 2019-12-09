@@ -13,29 +13,25 @@
   </head>
   <body class="">
     <header class="masthead  mb-5">
-      <div class="row">
-        <div class="col-lg-12">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <img src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-08-22/6XPgDHX.png?w=660" alt="">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" href="./teams">Listes des équipes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./coachs">Listes des coachs</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="./ranking">Classement</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+      <nav class="navbar navbar-expand-lg navbar-light ">
+        <img src="https://d18lkz4dllo6v2.cloudfront.net/cumulus_uploads/entry/2018-08-22/6XPgDHX.png?w=660" alt="">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./teams">Listes des équipes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./coachs">Listes des coachs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./ranking">Classement</a>
+            </li>
+          </ul>
         </div>
-      </div>
+      </nav>
     </header>
     <?php echo $content ?>
 

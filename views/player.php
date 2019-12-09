@@ -23,21 +23,25 @@
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-10 mt-5">
-        Club : <a href="./teams/<?php echo $players->getTId(); ?>"><?php echo $players->getTName(); ?></a>
+        Club : <a href="./teams/<?php echo $players->getTId(); ?>"> <b><?php echo $players->getTName(); ?></b> </a>
         <br>
-        Nationalité : <?php echo $players->getNationality(); ?>
+        Nationalité : <b><?php echo $players->getNationality(); ?></b>
         <br>
-        Date de naissance : <?php echo $players->getBirthdayDate()->format('d/m/Y'); ?>
+        Date de naissance : <b><?php echo $players->getBirthdayDate()->format('d/m/Y'); ?></b>
         <br>
-        Lieu de naissance : <?php echo $players->getBirthdayPlace(); ?>
+        Lieu de naissance : <b><?php echo $players->getBirthdayPlace(); ?></b>
         <br>
-        Taille : <?php echo $players->getSize(); ?>
+        Taille : <b><?php echo $players->getSize(); ?></b>
         <br>
-        Poids : <?php echo $players->getWeight(); ?> kg
+        Poids : <b><?php echo $players->getWeight(); ?> kg</b>
         <br>
-        Numéro de maillot : <?php echo $players->getNumberPlayer(); ?>
+        Poste : <b><?php if ($players->getPoste() != null) {
+          echo $players->getPoste();
+        } ?></b>
         <br>
-        Informations supplémentaires : <a href="<?php echo $players->getLink(); ?>"><?php echo $players->getLink(); ?></a>
+        Numéro de maillot : <b><?php echo $players->getNumberPlayer(); ?></b>
+        <br>
+        Informations supplémentaires : <b><a href="<?php echo $players->getLink(); ?>"><?php echo $players->getLink(); ?></a></b>
       </div>
     </div>
   </div>
