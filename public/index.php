@@ -30,7 +30,7 @@
                   <a class="nav-link" href="./coachs">Listes des coachs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Classement</a>
+                  <a class="nav-link" href="./ranking">Classement</a>
                 </li>
               </ul>
             </div>

@@ -2,7 +2,7 @@
 use Controllers\TeamsController;
 use Controllers\CoachsController;
 use Controllers\PlayersController;
-
+use Controllers\RankingController;
 
 spl_autoload_register(function ($class) {
   $parts = explode('\\', $class);
@@ -38,6 +38,10 @@ switch ($route) {
       if (isset($params[1])) {
         $players->showPlayer($params[1]);
       }
+      break;
+    case 'ranking' :
+      $rankings = new RankingController;
+      $rankings->rank();
       break;
   default:
     include('views/404.php');
