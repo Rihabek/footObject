@@ -61,7 +61,7 @@ class MatchsModel extends Model
   public function getRank(): array
   {
     $request =
-    "SELECT  @rank := @rank + 1 as '#', q.*
+    "SELECT  @rank := @rank + 1 as p, q.*
     FROM (
     SELECT teams.name, teams.id, gp, score_for gf, score_against ga, score_for - score_against gd, w, l, d, (w * 3) + d as pts
       FROM  teams

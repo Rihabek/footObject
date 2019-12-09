@@ -6,6 +6,9 @@
   .team {
     width: 40rem;
   }
+  .team span {
+    margin-right: 3rem;
+  }
 </style>
 
 <div class="container">
@@ -25,7 +28,7 @@
       </tr>
       <?php foreach ($ranks as $rank): ?>
         <tr>
-          <th class="team"><?php echo $rank->name; ?></th>
+          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b><?php echo $rank->name;?></b></td>
           <th><?php echo $rank->pts; ?></th>
           <td><?php echo $rank->gp; ?></td>
           <td><?php echo $rank->w; ?></td>
