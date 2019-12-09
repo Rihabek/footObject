@@ -28,7 +28,7 @@
       </tr>
       <?php foreach ($ranks as $rank): ?>
         <tr>
-          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b><?php echo $rank->name;?></b></td>
+          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b><?php echo $rank->short_name;?></b></td>
           <th><?php echo $rank->pts; ?></th>
           <td><?php echo $rank->gp; ?></td>
           <td><?php echo $rank->w; ?></td>
