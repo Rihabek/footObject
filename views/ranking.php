@@ -9,6 +9,9 @@
   .team span {
     margin-right: 3rem;
   }
+  .linkTeam {
+    color: black;
+  }
 </style>
 
 <div class="container">
@@ -28,7 +31,7 @@
       </tr>
       <?php foreach ($ranks as $rank): ?>
         <tr>
-          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b><?php echo $rank->short_name;?></b></td>
+          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b> <a class="linkTeam" href="./teams/<?php echo $rank->id; ?>"><?php echo $rank->short_name;?></a> </b></td>
           <th><?php echo $rank->pts; ?></th>
           <td><?php echo $rank->gp; ?></td>
           <td><?php echo $rank->w; ?></td>
