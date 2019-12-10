@@ -25,6 +25,9 @@
     overflow: hidden;
     background-color: #f1f1f1;
   }
+  td a {
+    color: black;
+  }
 
 </style>
 <div class="container jumbotron">
@@ -38,7 +41,7 @@
     <div class="col-lg-12 col-md-10">
       <button type="button" class="collapsible">Informations</button>
       <div class="content mt-3">
-        Nom : <?php echo $team->getName(); ?>
+        Nom : <b><?php echo $team->getName(); ?></b>
         <br>
         Fondé en : <?php echo $team->getFundationDate()->format('Y'); ?>
         <br>
@@ -100,11 +103,13 @@
       <button type="button" class="collapsible">Match</button>
       <div class="content mt-3">
         <table class="table text-center">
-          <th scope="row" colspan="2">Résultats saison 2019-2020</th>
+          <th scope="row" colspan="4">Résultats saison 2019-2020</th>
           <?php foreach ($matchs as $match): ?>
             <tr>
              <td>Journée <?php echo $match->getDay(); ?></td>
-             <td><?php echo $match->getThShortName(); ?> <?php echo $match->getScoreHome(); ?> - <?php echo $match->getScoreAway(); ?>  <?php echo $match->getTaShortName(); ?></td>
+             <td class="match"> <a href="teams/<?php echo $match->getIdTeamHome() ?>"><?php echo $match->getThShortName(); ?></a> </td>
+             <td class="<?= $match->isWinner($team) ? 'text-success font-weight-bold' : '' ?> <?= $match->isLoser($team) ? 'text-danger' : '' ?>"><?php echo $match->getScoreHome(); ?>-<?php echo $match->getScoreAway(); ?></td>
+             <td class="match"> <a href="teams/<?php echo $match->getIdTeamAway() ?>"><?php echo $match->getTaShortName(); ?></a> </td>
            </tr>
           <?php endforeach; ?>
         </table>
