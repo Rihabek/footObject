@@ -107,18 +107,19 @@
           <?php foreach ($matchs as $match): ?>
             <tr>
              <td>Journée <?php echo $match->getDay(); ?></td>
-             <td class="match"> <a href="teams/<?php echo $match->getIdTeamHome() ?>"><?php echo $match->getThShortName(); ?></a> </td>
+             <td class="match"> <a <?= $match->getIdTeamHome() === $team->getId() ? 'class="font-weight-bold"' : '' ?> href="teams/<?php echo $match->getIdTeamHome() ?>"><?php echo $match->getThShortName(); ?></a> </td>
              <td class="<?= $match->isWinner($team) ? 'text-success font-weight-bold' : '' ?> <?= $match->isLoser($team) ? 'text-danger' : '' ?>"><?php echo $match->getScoreHome(); ?>-<?php echo $match->getScoreAway(); ?></td>
-             <td class="match"> <a href="teams/<?php echo $match->getIdTeamAway() ?>"><?php echo $match->getTaShortName(); ?></a> </td>
+             <td class="match"> <a <?= $match->getIdTeamAway() === $team->getId() ? 'class="font-weight-bold"' : '' ?> href="teams/<?php echo $match->getIdTeamAway() ?>"><?php echo $match->getTaShortName(); ?></a> </td>
            </tr>
           <?php endforeach; ?>
         </table>
         <table class="table text-center">
-          <th scope="row" colspan="3">Match à venir</th>
+          <th scope="row" colspan="4">Match à venir</th>
           <?php foreach ($nextMatchs as $nextMatch): ?>
             <tr>
              <td>Journée <?php echo $nextMatch->getDay(); ?></td>
-             <td><?php echo $nextMatch->getThShortName(); ?> <?php echo $nextMatch->getScoreHome(); ?> - <?php echo $nextMatch->getScoreAway(); ?>  <?php echo $nextMatch->getTaShortName(); ?> </td>
+             <td><a <?= $nextMatch->getIdTeamHome() === $team->getId() ? 'class="font-weight-bold"' : '' ?> href="teams/<?php echo $nextMatch->getIdTeamHome() ?>"><?php echo $nextMatch->getThShortName();; ?></a></td>
+             <td> <a <?= $nextMatch->getIdTeamAway() === $team->getId() ? 'class="font-weight-bold"' : '' ?> href="teams/<?php echo $nextMatch->getIdTeamAway() ?>"><?php echo $nextMatch->getTaShortName(); ?></a></td>
              <td> <?php echo $nextMatch->getDate(); ?></td>
            </tr>
           <?php endforeach; ?>
