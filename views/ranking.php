@@ -17,33 +17,32 @@
 <div class="container">
   <div class="row">
     <table class="table  table-borderless">
-    <tbody>
-      <tr>
-        <th class="team"></th>
-        <td>Pts</td>
-        <td>J.</td>
-        <td>G.</td>
-        <td>N.</td>
-        <td>P.</td>
-        <td>p.</td>
-        <td>c.</td>
-        <td>+/-</td>
-      </tr>
-      <?php foreach ($ranks as $rank): ?>
+      <tbody>
         <tr>
-          <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b> <a class="linkTeam" href="./teams/<?php echo $rank->id; ?>"><?php echo $rank->short_name;?></a> </b></td>
-          <th><?php echo $rank->pts; ?></th>
-          <td><?php echo $rank->gp; ?></td>
-          <td><?php echo $rank->w; ?></td>
-          <td><?php echo $rank->d; ?></td>
-          <td><?php echo $rank->l; ?></td>
-          <td><?php echo $rank->gf; ?></td>
-          <td><?php echo $rank->ga ;?></td>
-          <td><?php echo $rank->gd; ?></td>
+          <th class="team"></th>
+          <td>Pts</td>
+          <td>J.</td>
+          <td>G.</td>
+          <td>N.</td>
+          <td>P.</td>
+          <td>p.</td>
+          <td>c.</td>
+          <td>+/-</td>
         </tr>
-      <?php endforeach; ?>
-    </tbody>
-  </table>
-
+        <?php foreach ($ranks as $rank): ?>
+          <tr>
+            <td class="team"> <span class="text-muted"><?php echo $rank->p ?></span> <b> <a class="linkTeam" href="./teams/<?php echo $rank->id; ?>"><?php echo $rank->short_name;?></a> </b></td>
+            <th><?php echo $rank->pts; ?></th>
+            <td><?php echo $rank->gp; ?></td>
+            <td><?php echo $rank->w; ?></td>
+            <td><?php echo $rank->d; ?></td>
+            <td><?php echo $rank->l; ?></td>
+            <td><?php echo $rank->gf; ?></td>
+            <td><?php echo $rank->ga ;?></td>
+            <td><?php echo $rank->gd; ?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
   </div>
 </div>
