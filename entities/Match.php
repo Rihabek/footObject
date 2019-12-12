@@ -53,6 +53,20 @@ class Match extends Entity
   */
   private $taShortName;
 
+  /**
+  *@var int
+  */
+  private $goalHome;
+
+  /**
+  *@var int
+  */
+  private $goalAway;
+
+  /**
+  *@var int
+  */
+  private $MDay;
 
     /**
      * Get the value of Id
@@ -321,5 +335,55 @@ class Match extends Entity
         $this->getIdTeamAway() === $team->getId() && $this->getScoreHome() > $this->getScoreAway()
       );
     }
+
+
+    /**
+     * Get the value of Goal Home
+     *
+     * @return int
+     */
+    public function getGoalHome()
+    {
+        return $this->goalHome;
+    }
+
+    /**
+     * Set the value of Goal Home
+     *
+     * @param int $goalHome
+     *
+     * @return self
+     */
+    public function setGoalHome($goalHome)
+    {
+        $this->goalHome = $goalHome;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Goal Away
+     *
+     * @return int
+     */
+    public function getGoalAway()
+    {
+        return $this->goalAway;
+    }
+
+    /**
+     * Set the value of Goal Away
+     *
+     * @param int $goalAway
+     *
+     * @return self
+     */
+    public function setGoalAway($goalAway)
+    {
+        $this->goalAway = $goalAway;
+
+        return $this;
+    }
+
 
 }

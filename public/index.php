@@ -29,6 +29,9 @@
             <li class="nav-item <?php if ($_SERVER['PHP_SELF'] == "/footObject/index.php/ranking" ) {echo " active";} ?>">
               <a class="nav-link" href="./ranking">Classement</a>
             </li>
+            <li class="nav-item <?php if ($_SERVER['PHP_SELF'] == "/footObject/index.php/stats" ) {echo " active";} ?>">
+              <a class="nav-link" href="./stats">Statistique</a>
+            </li>
           </ul>
         </div>
       </nav>

@@ -127,27 +127,6 @@
       </div>
     </div>
   </div>
-  <!-- Compositon équipe
-  <div class="row mt-4">
-    <div class="col-lg-12 col-md-10">
-      <button type="button" class="collapsible">Composition</button>
-      <div class="content mt-3 compo">
-        <div class="p1"></div>
-        <div class="p2"></div>
-        <div class="p3"></div>
-        <div class="p4"></div>
-        <div class="p5"></div>
-        <div class="p6"></div>
-        <div class="p7"></div>
-        <div class="p8"></div>
-        <div class="p9"></div>
-        <div class="p10"></div>
-        <div class="p11"></div>
-
-        <img class="img-fluid w-100" src="./public/img/stade.png" alt="">
-      </div>
-    </div>
-  </div> -->
 </div>
 <script>
 var coll = document.getElementsByClassName("collapsible");
