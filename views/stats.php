@@ -7,10 +7,9 @@
 
 <div class="container">
   <div class="row">
-    <?php var_dump($stats); ?>
     <?php foreach ($stats as $value): ?>
       <div class="col-lg-12">
-        Pour cette <?php echo $value->getDay(); ?>
+         <?php $sum=0 ; $sum = $sum + $value->getScoreHome(); echo $sum;?>
       </div>
     <?php endforeach; ?>
   </div>
