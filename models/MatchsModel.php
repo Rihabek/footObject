@@ -128,10 +128,11 @@ class MatchsModel extends Model
   }
 
   /**
+  * @param int $id
    * @return EntityMatch
    */
 
-  public function getStatsMatchs(): array
+  public function getStatsMatchs($id): array
   {
     $request = "SELECT
     m.*,
@@ -144,8 +145,11 @@ class MatchsModel extends Model
     ON th.id = m.id_team_home
     INNER JOIN teams AS ta
     ON ta.id = m.id_team_away
-    WHERE m.score_home IS  NULL";
+    WHERE m.score_home IS NOT NULL AND m.day = :id
+    ORDER BY m.day ASC";
+
     $stmt = $this->db->prepare($request);
+    $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Match');
   }

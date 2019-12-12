@@ -7,6 +7,11 @@
 
 <div class="container">
   <div class="row">
-    Il y a eu <?php var_dump($stats) ?>
+    <?php var_dump($stats); ?>
+    <?php foreach ($stats as $value): ?>
+      <div class="col-lg-12">
+        Pour cette <?php echo $value->getDay(); ?>
+      </div>
+    <?php endforeach; ?>
   </div>
 </div>
