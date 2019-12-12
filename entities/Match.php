@@ -386,4 +386,29 @@ class Match extends Entity
     }
 
 
+
+    /**
+     * Get the value of Day
+     *
+     * @return int
+     */
+    public function getMDay()
+    {
+        return $this->MDay;
+    }
+
+    /**
+     * Set the value of Day
+     *
+     * @param int $MDay
+     *
+     * @return self
+     */
+    public function setMDay($MDay)
+    {
+        $this->MDay = $MDay;
+
+        return $this;
+    }
+
 }
