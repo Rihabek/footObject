@@ -78,6 +78,12 @@ class Match extends Entity
   */
   private $sScoreHome;
 
+  /**
+  *@var int
+  */
+  private $nbMatch;
+
+
     /**
      * Get the value of Id
      *
@@ -464,6 +470,31 @@ class Match extends Entity
     public function setSScoreHome($sScoreHome)
     {
         $this->sScoreHome = $sScoreHome;
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of Nb Match
+     *
+     * @return int
+     */
+    public function getNbMatch()
+    {
+        return $this->nbMatch;
+    }
+
+    /**
+     * Set the value of Nb Match
+     *
+     * @param int $nbMatch
+     *
+     * @return self
+     */
+    public function setNbMatch($nbMatch)
+    {
+        $this->nbMatch = $nbMatch;
 
         return $this;
     }

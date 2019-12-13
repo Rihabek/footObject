@@ -135,6 +135,7 @@ class MatchsModel extends Model
   {
     $request =
     "SELECT m.day,
+    COUNT(m.day) AS nbMatch,
     SUM(m.score_home) AS sScoreHome,
     SUM(m.score_away) AS sScoreAway
     FROM matchs AS m
