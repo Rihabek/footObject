@@ -10,7 +10,7 @@ for (var i = 1; i < 14; i++) {
   var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
-          labels: ['Red', 'Blue'],
+          labels: ['Buts marqués à domicile', "Buts marqués à l'extérieur"],
           datasets: [{
               label: 'Statistique buts de ligue 1',
               data: [goalHome, goalAway],
