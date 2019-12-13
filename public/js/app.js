@@ -1,8 +1,10 @@
 for (var i = 1; i < 14; i++) {
   var ctx = document.getElementById('graph'+i).getContext('2d');
 
-  var goalHome = document.getElementById('goalHome').textContent;
-  var goalAway = document.getElementById('goalAway').textContent;
+
+  var goalHome = document.getElementById('goalHome' + i).textContent;
+  var goalAway = document.getElementById('goalAway' + i).textContent;
+
 
 
   var myChart = new Chart(ctx, {
@@ -33,5 +35,4 @@ for (var i = 1; i < 14; i++) {
           }
       }
   });
-
 }
