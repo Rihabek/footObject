@@ -128,28 +128,20 @@ class MatchsModel extends Model
   }
 
   /**
-  * @param int $id
    * @return EntityMatch
    */
 
-  public function getStatsMatchs($id): array
+  public function getStatsMatchs(): array
   {
-    $request = "SELECT
-    m.*,
-    th.id AS thId,
-    ta.id AS taId,
-    th.short_name AS thShortName,
-    ta.short_name AS taShortName
+    $request =
+    "SELECT m.day,
+    SUM(m.score_home) AS sScoreHome,
+    SUM(m.score_away) AS sScoreAway
     FROM matchs AS m
-    INNER JOIN teams AS th
-    ON th.id = m.id_team_home
-    INNER JOIN teams AS ta
-    ON ta.id = m.id_team_away
-    WHERE m.score_home IS NOT NULL AND m.day = :id
-    ORDER BY m.day ASC";
+    WHERE m.score_home IS NOT NULL
+   	GROUP BY m.day";
 
     $stmt = $this->db->prepare($request);
-    $stmt->bindValue(':id', $id);
     $stmt->execute();
     return $stmt->fetchAll(\PDO::FETCH_CLASS, 'Entities\Match');
   }

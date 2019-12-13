@@ -68,6 +68,16 @@ class Match extends Entity
   */
   private $MDay;
 
+  /**
+  *@var int
+  */
+  private $sScoreAway;
+
+  /**
+  *@var int
+  */
+  private $sScoreHome;
+
     /**
      * Get the value of Id
      *
@@ -386,7 +396,6 @@ class Match extends Entity
     }
 
 
-
     /**
      * Get the value of Day
      *
@@ -407,6 +416,54 @@ class Match extends Entity
     public function setMDay($MDay)
     {
         $this->MDay = $MDay;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Score Away
+     *
+     * @return int
+     */
+    public function getSScoreAway()
+    {
+        return $this->sScoreAway;
+    }
+
+    /**
+     * Set the value of Score Away
+     *
+     * @param int $sScoreAway
+     *
+     * @return self
+     */
+    public function setSScoreAway($sScoreAway)
+    {
+        $this->sScoreAway = $sScoreAway;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Score Home
+     *
+     * @return int
+     */
+    public function getSScoreHome()
+    {
+        return $this->sScoreHome;
+    }
+
+    /**
+     * Set the value of Score Home
+     *
+     * @param int $sScoreHome
+     *
+     * @return self
+     */
+    public function setSScoreHome($sScoreHome)
+    {
+        $this->sScoreHome = $sScoreHome;
 
         return $this;
     }

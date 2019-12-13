@@ -46,8 +46,7 @@ switch ($route) {
       break;
     case 'stats' :
       $stats = new StatsController;
-      $idS = 1;
-      $stats->allStats($idS);
+      $stats->allStats();
       break;
   default:
     include('views/404.php');

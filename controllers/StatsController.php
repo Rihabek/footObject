@@ -11,10 +11,10 @@ class StatsController extends Controller
     $this->MatchsModel = new MatchsModel;
   }
 
-  public function allStats(int $idS): void
+  public function allStats()
   {
     $this->render('views/stats.php', [
-      'stats' => $this->MatchsModel->getStatsMatchs($idS)
+      'stats' => $this->MatchsModel->getStatsMatchs()
     ]);
   }
 }
